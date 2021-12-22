@@ -1,3 +1,93 @@
-body {
-  background-color: black;
+
+
+button{
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
+  background: grey;
+  border: solid 3px orange;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+}
+.main{
+  height: 800px;
+  width: 1000px;
+  margin: auto;
+  justify-content: center;
+  border: solid 2px black;
+  background-color: salmon;
+
+}
+
+
+
+.top {
+
+  padding-left: 15%;
+  padding-right: 15%;
+  display: flex;
+  height: 10%;
+  padding-top: 10px;
+  width: 70%;
+  justify-content: space-between;
+
+
+}
+
+.searchLocation{
+  height: 30px;
+  width: 120px;
+  font-size: 30;
+  margin: auto;
+
+}
+
+.middle{
+  margin-top: 20px;
+  height: 10%;
+  margin-bottom: 20px;
+
+  display: flex;
+}
+
+.buttom {
+
+  display: flex;
+
+}
+
+.buttomControls{
+  display: table-row;
+  justify-content:space-between;
+  height: 400px;
+  width: 40%;
+  border: solid 2px red;
+
+}
+
+.weather{
+  
+ 
+  width: 90%;
+  height:48% ;
+  border: solid green 2px;
+  margin: auto;
+}
+
+.locationTable{
+  margin: auto;
+  
+  width: 90%;
+  height: 48% ;
+  border: solid green 2px;
+}
+
+.map{
+  margin-right: 0;
 }
