@@ -32,6 +32,7 @@ function getPosition() {
 function onGetLocs() {
   locService.getLocs().then((locs) => {
     console.log('Locations:@@@@@@@@@@', locs);
+    console.log('Locations:33333', locs);
     document.querySelector('.locs').innerText = JSON.stringify(locs);
   });
 }
