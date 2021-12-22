@@ -24,15 +24,14 @@ function getPosition() {
   });
 }
 
-// function onAddMarker() {
-//     console.log('Adding a marker');
-//     mapService.addMarker({ lat: 32.0749831, lng: 34.9120554 });
-// }
+function onAddMarker() {
+  console.log('Adding a marker');
+  mapService.addMarker({ lat: 32.0749831, lng: 34.9120554 });
+}
 
 function onGetLocs() {
   locService.getLocs().then((locs) => {
-    console.log('Locations:@@@@@@@@@@', locs);
-    console.log('Locations:33333', locs);
+    console.log('Locations:', locs);
     document.querySelector('.locs').innerText = JSON.stringify(locs);
   });
 }
