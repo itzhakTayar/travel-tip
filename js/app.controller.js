@@ -6,7 +6,7 @@ window.onAddMarker = onAddMarker;
 window.onPanTo = onPanTo;
 window.onGetLocs = onGetLocs;
 window.onGetUserPos = onGetUserPos;
-
+window.setLocation = setLocation;
 function onInit() {
   mapService
     .initMap()
@@ -24,9 +24,9 @@ function getPosition() {
   });
 }
 
-function onAddMarker() {
+function onAddMarker(lat, lng) {
   console.log('Adding a marker');
-  mapService.addMarker({ lat: 32.0749831, lng: 34.9120554 });
+  mapService.addMarker({ lat, lng });
 }
 
 function onGetLocs() {
@@ -37,6 +37,7 @@ function onGetLocs() {
 }
 
 function onGetUserPos() {
+  navigator.geolocation.getCurrentPosition(showLocation);
   getPosition()
     .then((pos) => {
       console.log('User position is:', pos.coords);
@@ -51,4 +52,22 @@ function onGetUserPos() {
 function onPanTo() {
   console.log('Panning the Map');
   mapService.panTo(35.6895, 139.6917);
+}
+
+function showLocation(position) {
+  var coords = position.coords;
+  var lat = coords.latitude;
+  var lng = coords.longitude;
+  mapService.initMap(lat, lng);
+}
+function setLocation(map) {
+  console.log('hi');
+  google.maps.event.addListener(map, 'click', (event) => {
+    var lat = event.latLng.lat();
+    var lng = event.latLng.lng();
+    console.log(lat);
+    console.log(lng);
+    onAddMarker(lat, lng);
+    // openModal();
+  });
 }
