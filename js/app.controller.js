@@ -55,9 +55,9 @@ function onPanTo() {
 }
 
 function showLocation(position) {
-  var coords = position.coords;
-  var lat = coords.latitude;
-  var lng = coords.longitude;
+  //
+  var lat = position.lat;
+  var lng = position.lng;
   mapService.initMap(lat, lng);
 }
 function setLocation(map) {
@@ -71,3 +71,11 @@ function setLocation(map) {
     // openModal();
   });
 }
+let location = locService.getLocs('london');
+location.then((ans) => {
+  // console.log('kkk', ans);
+  // var a = ans.results[0].geometry.location;
+  // console.log(a, 'a');
+
+  showLocation(ans);
+});
